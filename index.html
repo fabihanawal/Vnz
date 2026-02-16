@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venza | আপনার বিশ্বস্ত গ্যাজেট পার্টনার</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Hind Siliguri', 'Inter', sans-serif;
+        }
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+        .animate-marquee {
+            display: inline-block;
+            white-space: nowrap;
+            animation: marquee 15s linear infinite;
+        }
+        .animate-marquee:hover {
+            animation-play-state: paused;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* 3D Moving Logo Animation - VENZA TECH */
+        .logo-3d-wrapper {
+            perspective: 1200px;
+            display: inline-block;
+            padding: 10px;
+        }
+        .logo-3d-text {
+            display: inline-block;
+            font-weight: 900;
+            font-family: 'Inter', sans-serif;
+            letter-spacing: -0.05em;
+            transform-style: preserve-3d;
+            animation: rotate3d 4s infinite ease-in-out, rainbowGlow 6s infinite linear;
+            position: relative;
+            background: linear-gradient(135deg, #2563eb, #9333ea, #f43f5e);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 
+                0 1px 0 rgba(37, 99, 235, 0.4),
+                0 2px 0 rgba(147, 51, 234, 0.4),
+                0 3px 0 rgba(244, 63, 94, 0.4),
+                0 15px 30px rgba(0,0,0,0.2);
+        }
+
+        /* Tech Glow Reflection */
+        .logo-3d-text::after {
+            content: attr(data-text);
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: -1;
+            -webkit-text-fill-color: white;
+            filter: blur(8px);
+            opacity: 0.3;
+            animation: pulseGlow 2s infinite alternate ease-in-out;
+        }
+
+        @keyframes rotate3d {
+            0%, 100% { transform: rotateY(-15deg) rotateX(10deg); }
+            50% { transform: rotateY(15deg) rotateX(-10deg) scale(1.08); }
+        }
+
+        @keyframes rainbowGlow {
+            0% { filter: hue-rotate(0deg); }
+            100% { filter: hue-rotate(360deg); }
+        }
+
+        @keyframes pulseGlow {
+            0% { opacity: 0.2; transform: scale(1); }
+            100% { opacity: 0.5; transform: scale(1.05); }
+        }
+        
+        /* Floating effect for the wrapper */
+        .logo-float {
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "lucide-react": "https://esm.sh/lucide-react@^0.563.0",
+    "react": "https://esm.sh/react@^19.2.4",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/"
+  }
+}
+</script>
+</head>
+<body class="bg-white text-slate-900">
+    <div id="root"></div>
+</body>
+</html>
